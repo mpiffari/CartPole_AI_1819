@@ -1,0 +1,31 @@
+s
+Come già esplicitato in precedenza l'obbiettivo del problema legato al \textit{cart-pole} è quello di andare a bilanciare l'asta applicando una forza orizzontale al carrello. 
+
+L'aspetto principale da considerare è quello relativo allo spazio degli stati: esso rappresenta cosa l'agente va ad osservare del sistema, e quindi quali variabili andrà ad utilizzare per controllare il sistema stesso. Nel nostro caso, e nel caso genrico di studio del cart pole, le variabili di stato utilizzate sono:
+\begin{itemize}
+	\item \textbf{Posizione del carrello (x)};
+	\item \textbf{Velocità del carrello (\textit{v})};
+	\item \textbf{Angolo di inclinazione della barra ($\theta$)};
+	\item \textbf{Velocità angolare della barra ($\omega$)};
+\end{itemize}
+
+L'asta è considerata bilanciata in maniera corretta se entrambi le seguenti condizioni sono rispettate:
+\begin{itemize}
+	\item l'angolo dell'asta rimane compreso in un range attorrno alla posizione verticale (la quale corrisponde a 0 \textit{rad});
+	\item la posizione del carrello rimane all'interno di uno specifico intervallo.
+\end{itemize}
+Se una di queste due condizioni risulta essere invalidata, l'episodio specifico termina, facendo ripartire il training. Un'altra possibile via che conduce l'episodio verso la sua terminazione è quello in cui il reward dell'episodio in esame risulta essere superiore ad una certa soglia stabilita in maniera statica, il chè corrisponde a verificare che il carrello sia in grado di bilanciare l'asta per più di un certo numero di azioni (ovvero che ha effettivamente imparato a risolvere il problema che gli è stato sottoposto).
+
+Possiamo individuare inoltre due possibili varianti dell'ambiente legato al problema del cart-pole, le quali differiscono per lo spazio degli stati dell'agente:
+\begin{itemize}
+	\item \textbf{Discreto:} l'agente può applicare al carrello una forza che può valere \textbf{$F_{max}$} oppure \textbf{$-F_{max}$}, che è rappresentata dalla proprietà \textit{MaxForce} all'interno del codice. In sostanza ciò consiste nell'avere solo due azioni, le quali all'interno del codice sono identificate con due differenti numerazioni. Per esempio, la classica scelta, può essere quella di andare ad assegnare
+	\begin{itemize}
+		\item  \textbf{0} per l'azione di spinta del carrello verso sinistra;
+		\item  \textbf{1} invere se l'agente vuole muoversi verso destra.
+	\end{itemize}
+	\item \textbf{Continuo:} l'agente può applicare una forza che varia in maniera continua all'interno dell'intervallo $[-F_{max}, F_{max}]$.
+\end{itemize}
+
+Un altro aspetto importante da definire è la tipologia di reward che l'ambiente ritorna all'agente: si possono operare diverse scelte. Un'opzione comunemente seguita, la quale sarà sfruttata anche all'interno di questo progetto, è quello di andare a ad \textbf{incrementare il reward di una unita} ad ogni iterazione all'interno di un episodio, fintantochè esso non termina. 
+
+Quindi, più l'episodio si protrae nel tempo, più l'agente mantiene in equilibrio l'asta e, di conseguenza, più reward otterrà.

@@ -1,0 +1,27 @@
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Cart pole e variabili di stato\relax }}{1}{figure.caption.3}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Concetto di input-output\relax }}{2}{figure.caption.4}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Rete di retroazione\relax }}{2}{figure.caption.5}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Modellizzazione \textit {black - box}\relax }}{3}{figure.caption.6}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Sequenza \textit {State-Action-Reward}\relax }}{3}{figure.caption.7}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Policy\relax }}{3}{figure.caption.8}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Significato di \textit {imparare} per un agente\relax }}{3}{figure.caption.9}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Policy update con algoritmi di \textit {RL}\relax }}{4}{figure.caption.10}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces RL inteso come \textit {control theory}\relax }}{4}{figure.caption.11}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces 4 value functions utilizzate per la policy update\relax }}{8}{figure.caption.12}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Equazione di \textit {Bellman} utilizzata per andare ad aggiornare i valori della funzione Q\relax }}{8}{figure.caption.13}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Aggiornamento Q table\relax }}{8}{figure.caption.14}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Metodo per la stima della azione da eseguire\relax }}{9}{figure.caption.16}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Possibile struttura della Q-table\relax }}{10}{figure.caption.17}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Andamento del Q learning\relax }}{10}{figure.caption.18}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Andamento del Q learning confrontabile con atri algoritmi implementati\relax }}{11}{figure.caption.19}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces DQN network\relax }}{11}{figure.caption.20}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Modello della rete neurale: 4 input \textit {state} e 2 output \textit {Q-action}\relax }}{12}{figure.caption.21}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Creazione variabile per sequential memory\relax }}{12}{figure.caption.22}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Reward con DQN network\relax }}{13}{figure.caption.23}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Valutazione della funzione sulla base della Q-values\relax }}{14}{figure.caption.24}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Valutazione della funzione \textit {non} basandosi sulla Q-values\relax }}{14}{figure.caption.25}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces \textit {Finite Differences} algoritmo implementato\relax }}{16}{figure.caption.29}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Reward \textit {Finite Differences}\relax }}{16}{figure.caption.30}
