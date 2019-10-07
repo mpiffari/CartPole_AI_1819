@@ -59,11 +59,11 @@ Questa formula per l'update è stata implementata direttamente nel codice (come 
 \begin{algorithm}
 		\SetAlgoLined
 		\KwData{Parametri dell'algoritmo: step size $\alpha$ (con $0<=\alpha<=1$), $\epsilon>0$}
-		\While{non sono terminati gli episodi:}{
+		\While{non sono terminati gli episodi}{
 			Inizializza lo stato S
 			
 			
-			\While{non sono terminati gli step:}{
+			\While{non sono terminati gli step}{
 				Scegli azione A usando la policy derivata da Q (per esempio epsilon-greedy)
 				
 				

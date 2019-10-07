@@ -50,7 +50,7 @@ I passi principali che sono stati implementati, sono
 \subsection{Approccio \textit{Policy gradient estimation}}
 Come già sottolineato in precedenza andremo a basarci su un algoritmo \textit{gradient based}, nello specifico l'agoritmo alla differenze finite, il quale, in ambito matematico, rappresenta una strategia utilizzata per risolvere numericamente equazioni differenziali che si basa sull'approssimazione delle derivate con equazioni alle differenze finite.
 
-Questa approssimazione andiamo ad utilizzare per effettuare un'operazione di minimizzazione (anche locale) sulla funzione $J(\theta) = V_\pi(s)$ \label{eq:J_function_to_minimize}: l'approccio che si è deciso di seguire non è però quello classico, ma bensì una strada alternativa, in cui, fornita una policy parametrizzata $\pi(a|s,\theta)$, possiamo calcolare $J(\theta)$ simulando l'environment come un \textit{Markov Decision Process}, la funzione $J(\theta)$. 
+Questa approssimazione che andiamo ad utilizzare per effettuare un'operazione di minimizzazione (anche locale) sulla funzione $J(\theta) = V_\pi(s)$ \label{eq:J_function_to_minimize}: l'approccio che si è deciso di seguire non è però quello classico, ma bensì una strada alternativa, in cui, fornita una policy parametrizzata $\pi(a|s,\theta)$, possiamo calcolare $J(\theta)$ simulando l'environment come un \textit{Markov Decision Process}, la funzione $J(\theta)$. 
 
 In particolare:
 \begin{itemize}
@@ -63,30 +63,93 @@ In particolare:
 	delta = variance_of_perturbation * np.random.randn(numberOfCentrum, 1) 
 	\end{lstlisting}
 	\item Il vettore randomico generato in precedenza lo utilizzeremo poi per calcolare, tramite la tecnica definita \textit{roll-out} (sezione ~\ref{sec:rollout}), due valori della funzione J ($J_+, J_-$)
-	
-	TODO........
-	
+	\item Utilizzando l'approssimazione di taylor possiamo scrivere $J_+ \approx J(\Theta) + \nabla J^T \delta$ e $J_- \approx J(\Theta) - \nabla J^T \delta$
+	\item La differenza $J_\Delta = J_+ - J_-$ diventa $J_\Delta = 2 \delta^T \nabla J$, dove $J_\Delta$ è un numero scalare mentre $\nabla J$ e $\delta$ sono vettori.
 \end{itemize}
 
-\subsubsection{RBF network}
-\label{sec:RBF}
-\subsubsection{\textit{Phi} function}
-\subsubsection{Rollout}
-\label{sec:rollout}
+Questo processo andiamo a ripeterlo più volte con differenti valori randomici di $\delta_i$ con $i= 1,2,...N_H$: andremo quindi ad ottenere così differenti $J_{\Delta_i}$, ma ci sarà solamente un gradiente ($\nabla J$ sconosciuto).
+
+In forma matriciale quindi diventa:
+\begin{figure}[!H]
+	\centering
+	\includegraphics[width=\textwidth]{Immagini/Matrix_form.JPG}
+	\caption{Matrix form}}
+	\label{fig:matrix_form}
+\end{figure}
+La soluzione dovrebbe essere data da $\nabla J = 1/2 \Delta^{-1} J_\Delta$, ma $\Delta$
+potrebbe non essere una matrice quadrata (per il fatto che il numero di rollout potrebbe non essere pari alla dimensione di $\Theta$): con alcuni passaggi matematici (qui omessi) possiamo andare una forma più stabile per ricavare la soluzione (riportata anche in precedenza) data da $\Delta J = 1/2 [\Delta^T \Delta +\lambda I]^{-1} \Delta^T J_\Delta$
+\newpage
+\subsection{Algoritmo \textit{FD}}
+Questo è l'algoritmo implementato nel codice per apprendere i parametri ottimi. 
+La corrispondeza implementata in \textit{Python} dell'algoritmo ~\ref{alg:FD_alg} la si trova nella figura ~\ref{fig:FD_py_alg}.
+
+\begin{algorithm} [h!]
+	\SetAlgoLined
+	\caption{Finite Differences algorithm}
+	\label{alg:FD_alg}
+	\KwIn{Input: approssimazione della funzione parametrica $\pi(\bullet,\bullet,\Theta)$}
+	\KwOut{Output: pesi ottimali $\Theta^*$}
+	\KwData{Parametri: \textit{Learning rate $\alpha$}, $\lambda$, $\sigma_\delta ^2$, numero di rollout}
+	\While{Policy non converge}{
+		Inizializza $J_\Delta$ e $\Delta$
+		
+		\For{$i = 1,2,..., N_H$}{
+			Inizializza lo stato iniziale $s_0$
+			
+			Genera una variazione randomica $\delta$ distribuita come $N(0,\sigma_\delta^2)$
+			
+			$J_+ \leftarrow rollout(\pi(\Theta + \delta))$
+			
+			$J_- \leftarrow rollout(\pi(\Theta - \delta))$
+			
+			Add $J_+ - J_-$ al parametro  $J_\Delta$
+			
+			Add $\delta^T$ a $\Delta$
+		}
+		$\Theta^* \leftarrow \Theta^* + 1/2\alpha [\Delta^T \Delta + \lambda I]^{-1} \Delta^T J_\Delta$
+	}
+\end{algorithm}
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=\textwidth]{Immagini/FD_Algorithm.JPG}
-	\caption{\textit{Finite Differences} algoritmo implementato}
-	\label{fig:Reward_FD}
+	\includegraphics[width=\textwidth]{Immagini/FD_alg_python.JPG}
+	\caption{Reward \textit{Finite Differences in Python}}
+	\label{fig:FD_py_alg}
 \end{figure}
 
+\subsubsection{Rollout}
+\label{sec:rollout}
+Fornita una policy $a = \pi(s)$ oppure $a = \pi(a|s)$ e uno stato iniziale $s_0$ ad un certo istante temporale di un \textit{Markov Decision Process}, un rollout (definibile anche come \textit{traiettoria, storia o trial}), è semplicemente una sequenza \textbf{$H = s_0, a_0, s_1, a_1, .. , s_T, a_T$} generata a partire da uno stato $s_0$ e seguendo una policy $\pi$.
+Nella implementazione relativa a questo progetto, come spiegato nella sotto sezione ~\ref{sec:RBF}, siamo andati ad utilizzare come approssimazione della policy da seguire il risultato fornito in uscita da una \textit{Radial Basis Function} neural network. 
 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{Immagini/Rollout.JPG}
+	\caption{Rollout in Python}
+	\label{fig:roll_py}
+\end{figure}
 
-Reward con un batch di 10 trial con 70 iterazioni: ogni iterazione può essere eseguita per un massimo di 10 s, se l'esecuzione non fallisce prima (ovvero il pole cade fuori dal range angolare imposto).
+I pesi di questa rete neurale, come si può vedere nell'implementazione in figura ~\ref{fig:roll_py}, risultano però essere fissati, il che quindi equivale all'andare a seguire sempre la stessa policy.
+\subsubsection{RBF network}
+\label{sec:RBF}
+Come è stato evidenziato in precedenza, siamo andati ad utilizzare una \textit{RBF} lineare per andare ad approssimare l'apprendimento.
+
+In particolar modo le \textit{Radial Basis Function} permettono di andare a partizionare lo spazio degli stati, sovrapponendo dei \textit{"Gaussian neurons"}, in cui ogni neurone genera un segnale corrispondente al vettore di input: il segnale prodotto da ogni neurone presenta una potenza che dipende dalla distanza tra il centro della curva gaussiana che rappresenta il vettore e il vettore degli stati in input.
+
+Questo concetto base delle \textit{RBF} viene implementato andando a creare una tabella formata da una sequenza di punti cartesiani, i quali rappresentano i centri di ognuno dei neuroni della rete neurale, ovvero la media di ogni curva gaussiana (figura ~\ref{fig:RBF_Centrum}).
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{Immagini/Centrum_of_RBF.JPG}
+	\caption{Centri di ogni neurone della \textit{RBF}}
+	\label{fig:RBF_Centrum}
+\end{figure}
+
+Un altro aspetto importante da evidenziare è il fatto che, i \textit{weigths} relativi alla \textit{RBF} vengono aggiornati tramite algoritmo Finite Difference: quindi, i
 
 \subsection{Result}
 TODO: confronto anche con tempo di esecuzione del codice scritto in Matlab.
+Reward con un batch di 10 trial con 70 iterazioni: ogni iterazione può essere eseguita per un massimo di 10 s, se l'esecuzione non fallisce prima (ovvero il pole cade fuori dal range angolare imposto).
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{Immagini/Reward_FD.JPG}

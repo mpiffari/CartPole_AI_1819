@@ -23,5 +23,5 @@
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Reward con DQN network\relax }}{13}{figure.caption.23}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Valutazione della funzione sulla base della Q-values\relax }}{14}{figure.caption.24}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Valutazione della funzione \textit {non} basandosi sulla Q-values\relax }}{14}{figure.caption.25}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces \textit {Finite Differences} algoritmo implementato\relax }}{16}{figure.caption.29}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Reward \textit {Finite Differences}\relax }}{16}{figure.caption.30}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Reward \textit {Finite Differences in Python}\relax }}{16}{figure.caption.27}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Reward \textit {Finite Differences}\relax }}{17}{figure.caption.31}
