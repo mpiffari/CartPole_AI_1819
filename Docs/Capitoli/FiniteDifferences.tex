@@ -70,10 +70,10 @@ In particolare:
 Questo processo andiamo a ripeterlo più volte con differenti valori randomici di $\delta_i$ con $i= 1,2,...N_H$: andremo quindi ad ottenere così differenti $J_{\Delta_i}$, ma ci sarà solamente un gradiente ($\nabla J$ sconosciuto).
 
 In forma matriciale quindi diventa:
-\begin{figure}[!H]
+\begin{figure}[h!]
 	\centering
-	\includegraphics[width=\textwidth]{Immagini/Matrix_form.JPG}
-	\caption{Matrix form}}
+	\includegraphics[width=0.7\textwidth]{Immagini/Matrix_form.JPG}
+	\caption{Matrix form}
 	\label{fig:matrix_form}
 \end{figure}
 La soluzione dovrebbe essere data da $\nabla J = 1/2 \Delta^{-1} J_\Delta$, ma $\Delta$
@@ -124,7 +124,7 @@ Nella implementazione relativa a questo progetto, come spiegato nella sotto sezi
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=\textwidth]{Immagini/Rollout.JPG}
+	\includegraphics[width=0.7\textwidth]{Immagini/Rollout.JPG}
 	\caption{Rollout in Python}
 	\label{fig:roll_py}
 \end{figure}
@@ -140,7 +140,7 @@ Questo concetto base delle \textit{RBF} viene implementato andando a creare una 
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=\textwidth]{Immagini/Centrum_of_RBF.JPG}
+	\includegraphics[width=0.5\textwidth]{Immagini/Centrum_of_RBF.JPG}
 	\caption{Centri di ogni neurone della \textit{RBF}}
 	\label{fig:RBF_Centrum}
 \end{figure}
@@ -148,8 +148,9 @@ Questo concetto base delle \textit{RBF} viene implementato andando a creare una 
 Un altro aspetto importante da evidenziare è il fatto che, i \textit{weigths} relativi alla \textit{RBF} vengono aggiornati tramite algoritmo Finite Difference: quindi, i
 
 \subsection{Result}
-TODO: confronto anche con tempo di esecuzione del codice scritto in Matlab.
-Reward con un batch di 10 trial con 70 iterazioni: ogni iterazione può essere eseguita per un massimo di 10 s, se l'esecuzione non fallisce prima (ovvero il pole cade fuori dal range angolare imposto).
+Nella figura ~\ref{fig:Reward_FD}, è rappresentato l'andamento del reward con un batch di 10 trial con 70 iterazioni ciascuno: ogni iterazione può essere eseguita per un massimo di 10 s, nel caso in cui l'esecuzione non fallisce prima (ovvero il pole cade fuori dal range angolare imposto).
+Si nota quindi come siano necessarie meno iterazioni, rispetto agli algoritmi precedenti, per ottenere un reward molto buono.
+
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{Immagini/Reward_FD.JPG}

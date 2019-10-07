@@ -3,7 +3,7 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Cart pole e variabili di stato\relax }}{1}{figure.caption.3}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Concetto di input-output\relax }}{2}{figure.caption.4}
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Rete di retroazione\relax }}{2}{figure.caption.5}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Modellizzazione \textit {black - box}\relax }}{3}{figure.caption.6}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Modellizzazione \textit {black - box}\relax }}{2}{figure.caption.6}
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Sequenza \textit {State-Action-Reward}\relax }}{3}{figure.caption.7}
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Policy\relax }}{3}{figure.caption.8}
 \contentsline {figure}{\numberline {1.7}{\ignorespaces Significato di \textit {imparare} per un agente\relax }}{3}{figure.caption.9}
@@ -23,5 +23,8 @@
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Reward con DQN network\relax }}{13}{figure.caption.23}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Valutazione della funzione sulla base della Q-values\relax }}{14}{figure.caption.24}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Valutazione della funzione \textit {non} basandosi sulla Q-values\relax }}{14}{figure.caption.25}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Reward \textit {Finite Differences in Python}\relax }}{16}{figure.caption.27}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Reward \textit {Finite Differences}\relax }}{17}{figure.caption.31}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Matrix form\relax }}{16}{figure.caption.26}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Reward \textit {Finite Differences in Python}\relax }}{16}{figure.caption.28}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Rollout in Python\relax }}{17}{figure.caption.30}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Centri di ogni neurone della \textit {RBF}\relax }}{17}{figure.caption.32}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Reward \textit {Finite Differences}\relax }}{18}{figure.caption.33}

@@ -1,7 +1,7 @@
 \babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Introduzione}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Cart Pole}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}RL e controllo}{1}{section.1.2}
+\contentsline {section}{\numberline {1.2}RL e controllo}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Cart Pole environments and reward}{4}{section.1.3}
 \contentsline {chapter}{\numberline {2}Implementazione}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}Algoritmo Q learning}{7}{section.2.1}
@@ -16,7 +16,6 @@
 \contentsline {section}{\numberline {2.3}Algoritmo \textit {Finite Differences}}{14}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Approccio \textit {Policy gradient estimation}}{15}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Algoritmo \textit {FD}}{16}{subsection.2.3.2}
-\contentsline {subsubsection}{RBF network}{16}{section*.28}
-\contentsline {subsubsection}{\textit {Phi} function}{16}{section*.29}
-\contentsline {subsubsection}{Rollout}{16}{section*.30}
-\contentsline {subsection}{\numberline {2.3.3}Result}{16}{subsection.2.3.3}
+\contentsline {subsubsection}{Rollout}{17}{section*.29}
+\contentsline {subsubsection}{RBF network}{17}{section*.31}
+\contentsline {subsection}{\numberline {2.3.3}Result}{18}{subsection.2.3.3}
