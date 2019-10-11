@@ -13,9 +13,9 @@ from scipy.ndimage.filters import gaussian_filter1d
 # ====== CART POLE SOLVER CLASS ================
 
 class CartPole_QLearning():
-    def __init__(self, buckets=(1, 1, 4, 5,),
+    def __init__(self, buckets=(1, 1, 6, 12,),
                  n_episodes=2000,
-                 gamma=1,
+                 gamma=0.99,
                  type_of_env=0):
 
         # Selection of environment type (3D or not)
@@ -58,7 +58,7 @@ class CartPole_QLearning():
         # Flag activation
         self.debug = False  # Print debug information over the console
         self.plot = True  # Plot the trend of the reward during the n_episodes
-        self.render = False  # Show or not the animation of the cart
+        self.render = True  # Show or not the animation of the cart
 
     def discretize(self, obs):
 
@@ -71,7 +71,7 @@ class CartPole_QLearning():
         return tuple(new_obs)
 
     def choose_action(self, state, t):
-        epsilon = 0.3  # ϵ for greedy: explore_rate
+        epsilon = 0.4  # ϵ for greedy: explore_rate
 
         # Select a random action
         if random.uniform(0, 1) < epsilon:
@@ -90,7 +90,7 @@ class CartPole_QLearning():
         return action
 
     def update_q(self, state_old, action, reward, state_new, t):
-        alpha = 0.7  # Alpha
+        alpha = 0.55  # Alpha
         discount_rate = self.gamma
         self.Q[state_old][action] += alpha * (reward + discount_rate * np.max(self.Q[state_new]) - self.Q[state_old][action])
 

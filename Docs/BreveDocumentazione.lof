@@ -10,21 +10,27 @@
 \contentsline {figure}{\numberline {1.8}{\ignorespaces Policy update con algoritmi di \textit {RL}\relax }}{4}{figure.caption.10}
 \contentsline {figure}{\numberline {1.9}{\ignorespaces RL inteso come \textit {control theory}\relax }}{4}{figure.caption.11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces 4 value functions utilizzate per la policy update\relax }}{8}{figure.caption.12}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces 4 value functions utilizzate per la policy update\relax }}{7}{figure.caption.12}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Equazione di \textit {Bellman} utilizzata per andare ad aggiornare i valori della funzione Q\relax }}{8}{figure.caption.13}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Aggiornamento Q table\relax }}{8}{figure.caption.14}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Metodo per la stima della azione da eseguire\relax }}{9}{figure.caption.16}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Possibile struttura della Q-table\relax }}{10}{figure.caption.17}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Andamento del Q learning\relax }}{10}{figure.caption.18}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Andamento del Q learning confrontabile con atri algoritmi implementati\relax }}{11}{figure.caption.19}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces DQN network\relax }}{11}{figure.caption.20}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Modello della rete neurale: 4 input \textit {state} e 2 output \textit {Q-action}\relax }}{12}{figure.caption.21}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Creazione variabile per sequential memory\relax }}{12}{figure.caption.22}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Reward con DQN network\relax }}{13}{figure.caption.23}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Valutazione della funzione sulla base della Q-values\relax }}{14}{figure.caption.24}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Valutazione della funzione \textit {non} basandosi sulla Q-values\relax }}{14}{figure.caption.25}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Matrix form\relax }}{16}{figure.caption.26}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Reward \textit {Finite Differences in Python}\relax }}{16}{figure.caption.28}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Rollout in Python\relax }}{17}{figure.caption.30}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Centri di ogni neurone della \textit {RBF}\relax }}{17}{figure.caption.32}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Reward \textit {Finite Differences}\relax }}{18}{figure.caption.33}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Andamento del Q learning\relax }}{11}{figure.caption.18}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Reward con i parametri: $\alpha = 0.55$, $\gamma = 1$, $\epsilon = 0.4$\relax }}{11}{figure.caption.19}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Comparazione andamento del reward con differenti valori assegnati ai parametri\relax }}{12}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Parametri: $\alpha = 0$, $\gamma = 1$, $\epsilon = 0.3$}}}{12}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Parametri: $\alpha = 1$, $\gamma = 1$, $\epsilon = 0.3$}}}{12}{subfigure.8.2}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Comparazione andamento del reward con differenti valori assegnati ai parametri\relax }}{12}{figure.caption.21}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Parametri: $\alpha = 0.65$, $\gamma = 1$, $\epsilon = 0$}}}{12}{subfigure.9.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Parametri: $\alpha = 0.65$, $\gamma = 1$, $\epsilon = 1$}}}{12}{subfigure.9.2}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces DQN network\relax }}{13}{figure.caption.22}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Modello della rete neurale: 4 input \textit {state} e 2 output \textit {Q-action}\relax }}{14}{figure.caption.23}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Creazione variabile per sequential memory\relax }}{14}{figure.caption.24}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Reward con DQN network\relax }}{15}{figure.caption.25}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Valutazione della funzione sulla base della Q-values\relax }}{15}{figure.caption.26}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Valutazione della funzione \textit {non} basandosi sulla Q-values\relax }}{16}{figure.caption.27}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Matrix form\relax }}{17}{figure.caption.28}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Reward \textit {Finite Differences in Python}\relax }}{18}{figure.caption.30}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Rollout in Python\relax }}{19}{figure.caption.32}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Centri di ogni neurone della \textit {RBF}\relax }}{19}{figure.caption.34}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Reward \textit {Finite Differences}\relax }}{20}{figure.caption.35}

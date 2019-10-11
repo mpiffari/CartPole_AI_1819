@@ -1,21 +1,21 @@
 \babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Introduzione}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Cart Pole}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}RL e controllo}{2}{section.1.2}
+\contentsline {section}{\numberline {1.2}RL e controllo}{1}{section.1.2}
 \contentsline {section}{\numberline {1.3}Cart Pole environments and reward}{4}{section.1.3}
 \contentsline {chapter}{\numberline {2}Implementazione}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}Algoritmo Q learning}{7}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Perch\IeC {\`e} Q-learning?}{7}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Q-learning off policy control}{8}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Scelta dell'azione e Q table}{8}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.2}Q-learning e off policy control}{8}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Scelta dell'azione e Q table}{9}{subsection.2.1.3}
 \contentsline {subsection}{\numberline {2.1.4}Result}{10}{subsection.2.1.4}
-\contentsline {section}{\numberline {2.2}Algoritmo DQN}{11}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Q network}{11}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Replay memory}{12}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Result}{13}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Algoritmo \textit {Finite Differences}}{14}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Approccio \textit {Policy gradient estimation}}{15}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Algoritmo \textit {FD}}{16}{subsection.2.3.2}
-\contentsline {subsubsection}{Rollout}{17}{section*.29}
-\contentsline {subsubsection}{RBF network}{17}{section*.31}
-\contentsline {subsection}{\numberline {2.3.3}Result}{18}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.2}Algoritmo DQN}{12}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Q network}{13}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Replay memory}{13}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Result}{14}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Algoritmo \textit {Finite Differences}}{15}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Approccio \textit {Policy gradient estimation}}{16}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Algoritmo \textit {FD}}{18}{subsection.2.3.2}
+\contentsline {subsubsection}{Rollout}{18}{section*.31}
+\contentsline {subsubsection}{RBF network}{19}{section*.33}
+\contentsline {subsection}{\numberline {2.3.3}Result}{19}{subsection.2.3.3}

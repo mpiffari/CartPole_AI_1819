@@ -191,11 +191,17 @@ for trial in range(0, trialNumber):
 
         # Simulate the system, rollouts
         for rollout in range(0, int(round(rolloutMax, 0))):
+            # Inizializza lo stato iniziale s0
             random_initial_state = np.array([[0], [2 * thresholdAngle * (np.random.rand() - 0.5)], [0], [0]])  # random initial state
+
+            # Genera una variazione randomica
             delta = variance_of_perturbation * np.random.randn(numberOfCentrum, 1)  # random parameter variation (Gaussian)
-            Jp = cart_rollout(random_initial_state, W + delta)  # Positive change return
-            Jm = cart_rollout(random_initial_state, W - delta)  # Negative change return
-            difference = np.array([Jp-Jm])
+
+            # Perturbation
+            J_positive = cart_rollout(random_initial_state, W + delta)  # Positive change return
+            J_negative = cart_rollout(random_initial_state, W - delta)  # Negative change return
+
+            difference = np.array([J_positive - J_negative])
             dJ = np.concatenate((dJ, difference), axis=0)  # Add return variation to dJ
             if len(Delta) == 0:
                 Delta = np.transpose(delta)

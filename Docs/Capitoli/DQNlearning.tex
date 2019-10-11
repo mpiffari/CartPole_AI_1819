@@ -1,3 +1,4 @@
+
 La soluzione al problema di discretizzazione degli stati con conseguente perdita di informazioni che potrebbe risultare importanti e decisive al learning dell'ambiente, viene risolta grazie all'algoritmo di Deep Q-network: la Q-table viene infatti sostituita da una rete neurale, la quale non necessita più di alcuna forma di discretizzazione che approssima la funzione valore.
 
 La rete prende come input lo stato e produce una stima della funzione valore per ogni azione: in particolare si tratta di una rete \textit{fully-connected}, in cui l'imput della network sono le quattro variabili di stato
@@ -11,7 +12,7 @@ mentre le uscite rappresentano i Q-values per le due possibili azioni, ovvero il
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{Immagini/DQN_network.JPG}
+	\includegraphics[width=0.7\textwidth]{Immagini/DQN_network.JPG}
 	\caption{DQN network}
 	\label{fig:DQN_network}
 \end{figure}
@@ -28,7 +29,9 @@ Nell'implementazione, per andare a realizzare la rete neurale, è stata utilizza
 	model.add(Activation('linear'))
 \end{lstlisting}
 
-Tramite l'utilizzo di una rete neurale quindi, andiamo a sostituire l'update della Q table, con il train della nostra rete neurale: come infatti ben sappiamo, il modello \textit{DQN neural network} è un modello di regressione, il cui output è tipicamente un valore continuo (\textit{float value}, che rappresenta direttamente valore della nostra Q function. L'agente, come sempre, andrà a scegliere l'azione che presenta il Q-value maggiore, che indica appunto quale è l'azione che si presume che andrà a dare un maggiore reward nel futuro.
+Tramite l'utilizzo di una rete neurale quindi, andiamo a sostituire l'update della Q table con il train della nostra rete neurale: come infatti ben sappiamo, il modello \textit{DQN neural network} è un modello di regressione, il cui output è tipicamente un valore continuo (\textit{float value}), che rappresenta direttamente valore della nostra Q function.
+
+L'agente, come sempre, andrà a scegliere l'azione che presenta il Q-value maggiore, che indica appunto quale è l'azione che si presume andare a dare un maggiore reward nel futuro.
 
 \begin{figure}[!h]
 	\centering
@@ -40,7 +43,9 @@ Tramite l'utilizzo di una rete neurale quindi, andiamo a sostituire l'update del
 
 \subsection{Replay memory}
 Introducendo una rete neurale, invece della Q-table utilizzata durante la prima versione del Q learning, la complessità del nostro ambiente può crescere significativamente, senza richiedere necessariamente più memoria: come si può facilmente vedere, un environment a celle con grandezza $50 \times 50$, andrebbe ad esaurire facilmente la memoria della maggior parte dei pc in commercio.
-Invece, con una rete neurale, anche con ambienti complessi, non dobbiamo affrontare problemi legati ai requisiti di memoria
+
+Invece, con una rete neurale, anche con ambienti complessi, non dobbiamo affrontare problemi legati ai requisiti di memoria.
+
 Per gestire questo utilizzo di memoria, un concetto da illustrare è quello dell’experience replay, codificato tramite il comando presentato in figura ~\ref{fig:SeqMem}.
 
 \begin{figure}[!h]
@@ -54,6 +59,7 @@ Gli algoritmi di reinforcement learning presentano infatti spesso il problema di
 
 L’idea della experience replay è quindi quella di salvare le esperienze
 in una memoria chiamata replay memory e durante ogni passo di learning recuperare in maniera randomica un campione di tali transazioni, per andare così ad introdurre una forte incorrelazione tra misure sequenziali.
+
 Questo è dimostrato come esso vada a stabilizzare e a migliorare la procedura di training della rete neurale DQN.
 
 \subsection{Result}

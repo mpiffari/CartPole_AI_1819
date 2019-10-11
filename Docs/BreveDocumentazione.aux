@@ -26,7 +26,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Cart pole e variabili di stato\relax }}{1}{figure.caption.3}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:CartPole}{{1.1}{1}{Cart pole e variabili di stato\relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}RL e controllo}{2}{section.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}RL e controllo}{1}{section.1.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Concetto di input-output\relax }}{2}{figure.caption.4}}
 \newlabel{fig:ActionBehaviour}{{1.2}{2}{Concetto di input-output\relax }{figure.caption.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Rete di retroazione\relax }}{2}{figure.caption.5}}
@@ -51,61 +51,74 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Algoritmo Q learning}{7}{section.2.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Perch\IeC {\`e} Q-learning?}{7}{subsection.2.1.1}}
 \newlabel{eq:discounted_return}{{2.1.1}{7}{Perchè Q-learning?}{subsection.2.1.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces 4 value functions utilizzate per la policy update\relax }}{8}{figure.caption.12}}
-\newlabel{fig:ValueFunctions}{{2.1}{8}{4 value functions utilizzate per la policy update\relax }{figure.caption.12}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Q-learning off policy control}{8}{subsection.2.1.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces 4 value functions utilizzate per la policy update\relax }}{7}{figure.caption.12}}
+\newlabel{fig:ValueFunctions}{{2.1}{7}{4 value functions utilizzate per la policy update\relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Q-learning e off policy control}{8}{subsection.2.1.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Equazione di \textit  {Bellman} utilizzata per andare ad aggiornare i valori della funzione Q\relax }}{8}{figure.caption.13}}
 \newlabel{fig:Q_estimation}{{2.2}{8}{Equazione di \textit {Bellman} utilizzata per andare ad aggiornare i valori della funzione Q\relax }{figure.caption.13}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Aggiornamento Q table\relax }}{8}{figure.caption.14}}
 \newlabel{fig:Q_update}{{2.3}{8}{Aggiornamento Q table\relax }{figure.caption.14}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Scelta dell'azione e Q table}{8}{subsection.2.1.3}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Q learning per la stima della policy $\pi $\relax }}{9}{algocf.1}}
-\newlabel{alg:Q_policy}{{1}{9}{Q-learning off policy control}{algocf.1}{}}
+\newlabel{alg:Q_policy}{{1}{9}{Q-learning e off policy control}{algocf.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Scelta dell'azione e Q table}{9}{subsection.2.1.3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Metodo per la stima della azione da eseguire\relax }}{9}{figure.caption.16}}
 \newlabel{fig:ChooseAction_Bucket}{{2.4}{9}{Metodo per la stima della azione da eseguire\relax }{figure.caption.16}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Possibile struttura della Q-table\relax }}{10}{figure.caption.17}}
 \newlabel{fig:Q_table_example}{{2.5}{10}{Possibile struttura della Q-table\relax }{figure.caption.17}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4}Result}{10}{subsection.2.1.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Andamento del Q learning\relax }}{10}{figure.caption.18}}
-\newlabel{fig:QLearning_result}{{2.6}{10}{Andamento del Q learning\relax }{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Andamento del Q learning confrontabile con atri algoritmi implementati\relax }}{11}{figure.caption.19}}
-\newlabel{fig:QLearning_poor_result}{{2.7}{11}{Andamento del Q learning confrontabile con atri algoritmi implementati\relax }{figure.caption.19}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Algoritmo DQN}{11}{section.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces DQN network\relax }}{11}{figure.caption.20}}
-\newlabel{fig:DQN_network}{{2.8}{11}{DQN network\relax }{figure.caption.20}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Q network}{11}{subsection.2.2.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Modello della rete neurale: 4 input \textit  {state} e 2 output \textit  {Q-action}\relax }}{12}{figure.caption.21}}
-\newlabel{fig:Model_of_DQN_network}{{2.9}{12}{Modello della rete neurale: 4 input \textit {state} e 2 output \textit {Q-action}\relax }{figure.caption.21}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Replay memory}{12}{subsection.2.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Creazione variabile per sequential memory\relax }}{12}{figure.caption.22}}
-\newlabel{fig:SeqMem}{{2.10}{12}{Creazione variabile per sequential memory\relax }{figure.caption.22}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Result}{13}{subsection.2.2.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Reward con DQN network\relax }}{13}{figure.caption.23}}
-\newlabel{fig:DQN_reward}{{2.11}{13}{Reward con DQN network\relax }{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Algoritmo \textit  {Finite Differences}}{14}{section.2.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Valutazione della funzione sulla base della Q-values\relax }}{14}{figure.caption.24}}
-\newlabel{fig:Q_function_utility}{{2.12}{14}{Valutazione della funzione sulla base della Q-values\relax }{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Valutazione della funzione \textit  {non} basandosi sulla Q-values\relax }}{14}{figure.caption.25}}
-\newlabel{fig:NO_Q_function_utility}{{2.13}{14}{Valutazione della funzione \textit {non} basandosi sulla Q-values\relax }{figure.caption.25}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Approccio \textit  {Policy gradient estimation}}{15}{subsection.2.3.1}}
-\newlabel{eq:J_function_to_minimize}{{2.3.1}{15}{Approccio \textit {Policy gradient estimation}}{subsection.2.3.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces Matrix form\relax }}{16}{figure.caption.26}}
-\newlabel{fig:matrix_form}{{2.14}{16}{Matrix form\relax }{figure.caption.26}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Algoritmo \textit  {FD}}{16}{subsection.2.3.2}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Finite Differences algorithm\relax }}{16}{algocf.2}}
-\newlabel{alg:FD_alg}{{2}{16}{Algoritmo \textit {FD}}{algocf.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.15}{\ignorespaces Reward \textit  {Finite Differences in Python}\relax }}{16}{figure.caption.28}}
-\newlabel{fig:FD_py_alg}{{2.15}{16}{Reward \textit {Finite Differences in Python}\relax }{figure.caption.28}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Rollout}{17}{section*.29}}
-\newlabel{sec:rollout}{{2.3.2}{17}{Rollout}{section*.29}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.16}{\ignorespaces Rollout in Python\relax }}{17}{figure.caption.30}}
-\newlabel{fig:roll_py}{{2.16}{17}{Rollout in Python\relax }{figure.caption.30}{}}
-\@writefile{toc}{\contentsline {subsubsection}{RBF network}{17}{section*.31}}
-\newlabel{sec:RBF}{{2.3.2}{17}{RBF network}{section*.31}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.17}{\ignorespaces Centri di ogni neurone della \textit  {RBF}\relax }}{17}{figure.caption.32}}
-\newlabel{fig:RBF_Centrum}{{2.17}{17}{Centri di ogni neurone della \textit {RBF}\relax }{figure.caption.32}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Result}{18}{subsection.2.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.18}{\ignorespaces Reward \textit  {Finite Differences}\relax }}{18}{figure.caption.33}}
-\newlabel{fig:Reward_FD}{{2.18}{18}{Reward \textit {Finite Differences}\relax }{figure.caption.33}{}}
-\bibcite{eco:tesi}{1}
-\bibcite{mori:tesi}{2}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Andamento del Q learning\relax }}{11}{figure.caption.18}}
+\newlabel{fig:QLearning_result}{{2.6}{11}{Andamento del Q learning\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Reward con i parametri: $\alpha = 0.55$, $\gamma = 1$, $\epsilon = 0.4$\relax }}{11}{figure.caption.19}}
+\newlabel{fig:QLearning_poor_result}{{2.7}{11}{Reward con i parametri: $\alpha = 0.55$, $\gamma = 1$, $\epsilon = 0.4$\relax }{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Comparazione andamento del reward con differenti valori assegnati ai parametri\relax }}{12}{figure.caption.20}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Parametri: $\alpha = 0$, $\gamma = 1$, $\epsilon = 0.3$}}}{12}{subfigure.8.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Parametri: $\alpha = 1$, $\gamma = 1$, $\epsilon = 0.3$}}}{12}{subfigure.8.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Comparazione andamento del reward con differenti valori assegnati ai parametri\relax }}{12}{figure.caption.21}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Parametri: $\alpha = 0.65$, $\gamma = 1$, $\epsilon = 0$}}}{12}{subfigure.9.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Parametri: $\alpha = 0.65$, $\gamma = 1$, $\epsilon = 1$}}}{12}{subfigure.9.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Algoritmo DQN}{12}{section.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces DQN network\relax }}{13}{figure.caption.22}}
+\newlabel{fig:DQN_network}{{2.10}{13}{DQN network\relax }{figure.caption.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Q network}{13}{subsection.2.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Replay memory}{13}{subsection.2.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Modello della rete neurale: 4 input \textit  {state} e 2 output \textit  {Q-action}\relax }}{14}{figure.caption.23}}
+\newlabel{fig:Model_of_DQN_network}{{2.11}{14}{Modello della rete neurale: 4 input \textit {state} e 2 output \textit {Q-action}\relax }{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Creazione variabile per sequential memory\relax }}{14}{figure.caption.24}}
+\newlabel{fig:SeqMem}{{2.12}{14}{Creazione variabile per sequential memory\relax }{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Result}{14}{subsection.2.2.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Reward con DQN network\relax }}{15}{figure.caption.25}}
+\newlabel{fig:DQN_reward}{{2.13}{15}{Reward con DQN network\relax }{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Algoritmo \textit  {Finite Differences}}{15}{section.2.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces Valutazione della funzione sulla base della Q-values\relax }}{15}{figure.caption.26}}
+\newlabel{fig:Q_function_utility}{{2.14}{15}{Valutazione della funzione sulla base della Q-values\relax }{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.15}{\ignorespaces Valutazione della funzione \textit  {non} basandosi sulla Q-values\relax }}{16}{figure.caption.27}}
+\newlabel{fig:NO_Q_function_utility}{{2.15}{16}{Valutazione della funzione \textit {non} basandosi sulla Q-values\relax }{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Approccio \textit  {Policy gradient estimation}}{16}{subsection.2.3.1}}
+\newlabel{eq:J_function_to_minimize}{{2.3.1}{16}{Approccio \textit {Policy gradient estimation}}{subsection.2.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.16}{\ignorespaces Matrix form\relax }}{17}{figure.caption.28}}
+\newlabel{fig:matrix_form}{{2.16}{17}{Matrix form\relax }{figure.caption.28}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Algoritmo \textit  {FD}}{18}{subsection.2.3.2}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Finite Differences algorithm\relax }}{18}{algocf.2}}
+\newlabel{alg:FD_alg}{{2}{18}{Algoritmo \textit {FD}}{algocf.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.17}{\ignorespaces Reward \textit  {Finite Differences in Python}\relax }}{18}{figure.caption.30}}
+\newlabel{fig:FD_py_alg}{{2.17}{18}{Reward \textit {Finite Differences in Python}\relax }{figure.caption.30}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Rollout}{18}{section*.31}}
+\newlabel{sec:rollout}{{2.3.2}{18}{Rollout}{section*.31}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.18}{\ignorespaces Rollout in Python\relax }}{19}{figure.caption.32}}
+\newlabel{fig:roll_py}{{2.18}{19}{Rollout in Python\relax }{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {subsubsection}{RBF network}{19}{section*.33}}
+\newlabel{sec:RBF}{{2.3.2}{19}{RBF network}{section*.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.19}{\ignorespaces Centri di ogni neurone della \textit  {RBF}\relax }}{19}{figure.caption.34}}
+\newlabel{fig:RBF_Centrum}{{2.19}{19}{Centri di ogni neurone della \textit {RBF}\relax }{figure.caption.34}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Result}{19}{subsection.2.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.20}{\ignorespaces Reward \textit  {Finite Differences}\relax }}{20}{figure.caption.35}}
+\newlabel{fig:Reward_FD}{{2.20}{20}{Reward \textit {Finite Differences}\relax }{figure.caption.35}{}}
+\bibcite{bib1}{1}
+\bibcite{bb2}{2}
+\bibcite{bb3}{3}
+\bibcite{bb4}{4}
+\bibcite{bb5}{5}
+\bibcite{bb6}{6}
+\bibcite{bb7}{7}
+\bibcite{bb8}{8}
+\bibcite{bb9}{9}

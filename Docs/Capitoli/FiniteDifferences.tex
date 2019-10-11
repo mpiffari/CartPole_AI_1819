@@ -1,4 +1,4 @@
-Negli algoritmi visti fin'ora, per trovare la policy adatta ($a = \pi(s)$ dove con $\pi$ indichiamo appunto la \textit{policy}) siamo sempre andati ad utilizzare una funzione approssimata $Q_{\pi^*}(s,a)$, la quale permetteva all'agente di scegliere quale fosse l'azione migliore da compiere, sia nel caso di azioni discrete, sia nel caso di azioni continue che discrete ()come si vede in figura ~\ref{fig:Q_function_utility}) andando poi a selezionare l'azione in grado di massimizzare l'output.
+Negli algoritmi visti fin'ora, per trovare la policy adatta ($a = \pi(s)$ dove con $\pi$ indichiamo appunto la \textit{policy}) siamo sempre andati ad utilizzare una funzione approssimata $Q_{\pi^*}(s,a)$, la quale permetteva all'agente di scegliere quale fosse l'azione migliore da compiere, sia nel caso di azioni discrete che nel caso di azioni continue (come si vede in figura ~\ref{fig:Q_function_utility}) andando poi a selezionare l'azione in grado di massimizzare l'output.
 
 \begin{figure}[!h]
 	\centering
@@ -7,7 +7,7 @@ Negli algoritmi visti fin'ora, per trovare la policy adatta ($a = \pi(s)$ dove c
 	\label{fig:Q_function_utility}
 \end{figure}
 
-La domanda che ci poniamo è: \textit{possiamo trovare la policy direttamente} partendo dallo stato attuale ($s_t$) e ottenendo appunto $a_t$?
+La domanda che ci poniamo è: \textit{possiamo trovare la policy direttamente} partendo dallo stato attuale $s_t$ e ottenendo appunto $a_t$?
 
 La risposta è si.
 
@@ -17,7 +17,7 @@ La risposta è si.
 	\caption{Valutazione della funzione \textit{non} basandosi sulla Q-values}
 	\label{fig:NO_Q_function_utility}
 \end{figure}
-Questo concetto, mostrato in maniera molto diretta nella figura ~\ref{fig:NO_Q_function_utility}, è quello che nella letteratura del RL viene chiamato come metodo di \textit{policy search}, il quale permette appunto di stimare la polici ottimale ($\pi^*(a|s)$) invece di cercare il valore ottimo per la funzione $Q^*(s,a))$: questo nuovo approccio presenta innumerevoli vantaggi rispetto agli algoritmi mostrati in precedenza, in particolare:
+Questo concetto, mostrato in maniera molto diretta nella figura ~\ref{fig:NO_Q_function_utility}, è quello che nella letteratura del RL viene chiamato come metodo di \textit{policy search}, il quale permette di stimare la policy ottimale ($\pi^*(a|s)$) invece di cercare il valore ottimo per la funzione $Q^*(s,a))$: questo nuovo approccio presenta innumerevoli vantaggi rispetto agli algoritmi mostrati in precedenza, in particolare:
 \begin{itemize}
 	\item Policies ottimali, scelte tramite algoritmi di questo tipo, presentano un numero di parametri minore rispetto al valore ottimale della q-functions (\textit{curse of dimensionality})
 	\item Processo di learn più veloce (e questo è anche dimostrato dai grafici presenti all'interno di questa documentazione)
@@ -25,7 +25,8 @@ Questo concetto, mostrato in maniera molto diretta nella figura ~\ref{fig:NO_Q_f
 \end{itemize}
 
 \textit{E cosa cerchiamo di ottimizzare in questo nuovo contesto?}
-I metodi di policy search vanno ad ottimizzare l'indice $J(\theta)$, dove $\theta$ rappresenta il vettore dei pesi; è possibile realizzare questa ottimizzazione utilizzando differenti metodi:
+I metodi di policy search vanno ad ottimizzare l'indice $J(\theta)$, dove $\theta$ rappresenta il vettore dei pesi.
+E' possibile realizzare questa ottimizzazione utilizzando differenti metodi:
 \begin{itemize}
 	\item Gradient free methods:
 	\begin{itemize}
@@ -48,7 +49,7 @@ I passi principali che sono stati implementati, sono
 \end{itemize}
 
 \subsection{Approccio \textit{Policy gradient estimation}}
-Come già sottolineato in precedenza andremo a basarci su un algoritmo \textit{gradient based}, nello specifico l'agoritmo alla differenze finite, il quale, in ambito matematico, rappresenta una strategia utilizzata per risolvere numericamente equazioni differenziali che si basa sull'approssimazione delle derivate con equazioni alle differenze finite.
+Come già sottolineato in precedenza andremo a basarci su un algoritmo \textit{gradient based}, nello specifico l'algoritmo alla differenze finite, il quale, in ambito matematico, rappresenta una strategia utilizzata per risolvere numericamente equazioni differenziali che si basa sull'approssimazione delle derivate con equazioni alle differenze finite.
 
 Questa approssimazione che andiamo ad utilizzare per effettuare un'operazione di minimizzazione (anche locale) sulla funzione $J(\theta) = V_\pi(s)$ \label{eq:J_function_to_minimize}: l'approccio che si è deciso di seguire non è però quello classico, ma bensì una strada alternativa, in cui, fornita una policy parametrizzata $\pi(a|s,\theta)$, possiamo calcolare $J(\theta)$ simulando l'environment come un \textit{Markov Decision Process}, la funzione $J(\theta)$. 
 
@@ -80,8 +81,9 @@ La soluzione dovrebbe essere data da $\nabla J = 1/2 \Delta^{-1} J_\Delta$, ma $
 potrebbe non essere una matrice quadrata (per il fatto che il numero di rollout potrebbe non essere pari alla dimensione di $\Theta$): con alcuni passaggi matematici (qui omessi) possiamo andare una forma più stabile per ricavare la soluzione (riportata anche in precedenza) data da $\Delta J = 1/2 [\Delta^T \Delta +\lambda I]^{-1} \Delta^T J_\Delta$
 \newpage
 \subsection{Algoritmo \textit{FD}}
-Questo è l'algoritmo implementato nel codice per apprendere i parametri ottimi. 
-La corrispondeza implementata in \textit{Python} dell'algoritmo ~\ref{alg:FD_alg} la si trova nella figura ~\ref{fig:FD_py_alg}.
+Questo è l'algoritmo implementato nel codice per apprendere i parametri ottimi della RBF network.
+
+La corrispondenza implementata in \textit{Python} dell'algoritmo ~\ref{alg:FD_alg} la si trova nella figura ~\ref{fig:FD_py_alg}.
 
 \begin{algorithm} [h!]
 	\SetAlgoLined
@@ -120,7 +122,8 @@ La corrispondeza implementata in \textit{Python} dell'algoritmo ~\ref{alg:FD_alg
 \subsubsection{Rollout}
 \label{sec:rollout}
 Fornita una policy $a = \pi(s)$ oppure $a = \pi(a|s)$ e uno stato iniziale $s_0$ ad un certo istante temporale di un \textit{Markov Decision Process}, un rollout (definibile anche come \textit{traiettoria, storia o trial}), è semplicemente una sequenza \textbf{$H = s_0, a_0, s_1, a_1, .. , s_T, a_T$} generata a partire da uno stato $s_0$ e seguendo una policy $\pi$.
-Nella implementazione relativa a questo progetto, come spiegato nella sotto sezione ~\ref{sec:RBF}, siamo andati ad utilizzare come approssimazione della policy da seguire il risultato fornito in uscita da una \textit{Radial Basis Function} neural network. 
+
+Nell'implementazione relativa a questo progetto, come spiegato nella sotto sezione ~\ref{sec:RBF}, siamo andati ad utilizzare come approssimazione della policy da seguire il risultato fornito in uscita da una \textit{Radial Basis Function} neural network. 
 
 \begin{figure}[!h]
 	\centering
@@ -145,7 +148,7 @@ Questo concetto base delle \textit{RBF} viene implementato andando a creare una 
 	\label{fig:RBF_Centrum}
 \end{figure}
 
-Un altro aspetto importante da evidenziare è il fatto che, i \textit{weigths} relativi alla \textit{RBF} vengono aggiornati tramite algoritmo Finite Difference: quindi, i
+Un altro aspetto importante da evidenziare è il fatto che, i \textit{weights} relativi alla \textit{RBF} vengono aggiornati tramite algoritmo Finite Difference.
 
 \subsection{Result}
 Nella figura ~\ref{fig:Reward_FD}, è rappresentato l'andamento del reward con un batch di 10 trial con 70 iterazioni ciascuno: ogni iterazione può essere eseguita per un massimo di 10 s, nel caso in cui l'esecuzione non fallisce prima (ovvero il pole cade fuori dal range angolare imposto).
